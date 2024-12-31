@@ -42,19 +42,19 @@ def play_treasure_island():
         print("\nYou take a step forward, but the ground crumbles beneath your feet! With a scream,\nyou plummet into darkness and fall to your untimely demise.\n\n")
         try_again()
     elif cross_roads.lower() == 'l':
-        print("\The left path whispers promises of safety and treasure. You proceed with determination.\n\n")
-        swim_or_wait = input("Continuing on your journey, you see a beautiful, inviting lake spread before you.\nThe blazing sun is oppressive, and you consider taking a refreshing dip. Would you like to take a swim (swim), or wait until later (wait)? ")
-        while swim_or_wait.lower() != 'swim' and swim_or_wait.lower() != 'wait':
+        print("\n\nThe left path whispers promises of safety and treasure. You proceed with determination...\n\n")
+        swim_or_wait = input("You come to a beautiful, inviting lake spread before you. The blazing sun is oppressive, and you consider taking a refreshing dip. \n\nWould you like to take a swim (swim), or wait until later (wait)? ")
+        while swim_or_wait.lower() != 'swim' and swim_or_wait.lower() != 'wait' and swim_or_wait.lower() != 's' and swim_or_wait.lower() != 'w':
             swim_or_wait = input("\nPlease enter swim or wait: ")
             attempts += 1
             if attempts >= 3:
                 print("\nToo many invalid attempts.")
                 attempts = 0
                 try_again()
-        if swim_or_wait.lower() == 'swim':
+        if swim_or_wait.lower() == 'swim' or swim_or_wait.lower() == 's':
             print("\nYou dive into the cool water, but the ripples summon a ferocious monster trout.\nIt leaps out and swallows you whole!\n\n")
             try_again()
-        elif swim_or_wait.lower() == 'wait':
+        elif swim_or_wait.lower() == 'wait' or swim_or_wait.lower() == 'w':
             print("\nPatience rewards you. The waters part, revealing a secret path leading to your next challenge.\n\n")
             which_door = input("You have three large doors in front of you. One is blue, one is yellow, and one is red. Which door would you like to go through? (blue, yellow, or red): ")
             while which_door.lower() != 'blue' and which_door.lower() != 'yellow' and which_door.lower() != 'red':
@@ -71,7 +71,7 @@ def play_treasure_island():
                 print("\nAs the red door opens, a wave of searing heat engulfs you. There’s no escape from the inferno.")
                 try_again()
             elif which_door.lower() == 'yellow':
-                print("\nThe yellow door opens to reveal glittering treasures beyond your wildest dreams.\nYou’ve found the treasure!\n")
+                print("\nThe yellow door opens to reveal glittering treasures beyond your wildest dreams. Congratulations, you’ve found the treasure!\n")
                 try_again()
 
 def try_again():
@@ -87,4 +87,3 @@ def try_again():
 
 
 play_treasure_island()
-
